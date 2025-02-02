@@ -1,0 +1,6 @@
+$bg-color-2: #d2d2d2;
+$bg-color1: #ffffff;
+
+body {
+  background: linear-gradient(to right, $bg-color1, $bg-color-2);
+}
