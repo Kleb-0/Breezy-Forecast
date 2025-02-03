@@ -1,22 +1,35 @@
 import LiveWeather from "./components/Live-weather/live-weather.jsx";
-import getWeather from "./components/Services/get-weather.jsx";
+import getCurrentWeather from "./components/Services/get-weather.jsx";
 import { useEffect, useState } from "react";
+import getForecastData from "./components/Services/forecast-data.jsx";
 import "./app.scss";
+import WeatherPrevision from "./components/Weather-prevision/weather-prevision.jsx";
 
 function App() {
-  const [weatherData, setWeatherData] = useState(null);
+  const [currentWeatherData, setCurrentWeatherData] = useState(null);
   useEffect(() => {
-    const fetchWeather = async () => {
-      const data = await getWeather("Biguaçu");
-      setWeatherData(data);
+    const fetchCurrentWeatherData = async () => {
+      const data = await getCurrentWeather("Biguaçu");
+      setCurrentWeatherData(data);
     };
-    fetchWeather();
+    fetchCurrentWeatherData();
+  }, []);
+
+  const [forecastData, setForecastData] = useState(null);
+  useEffect(() => {
+    const fetchForecastData = async () => {
+      const data = await getForecastData("Biguaçu");
+      console.log("Dados da previsão de tempo:", data);
+      setForecastData(data);
+    };
+    fetchForecastData();
   }, []);
 
   return (
-    <>
-      <LiveWeather weatherData={weatherData} />
-    </>
+    <div className="d-flex justify-content-center align-items-center">
+      <LiveWeather currentWeatherData={currentWeatherData} />
+      <WeatherPrevision forecastData={forecastData} />
+    </div>
   );
 }
 

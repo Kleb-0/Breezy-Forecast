@@ -1,8 +1,12 @@
 .container {
-    max-width: 400px;
+  height: 500px;
+  max-height: 500px;
+  width: 400px;
+  max-width: 400px;
+  background-color: #2e2e2e;
 }
 
-.list-group-item{
-    border: none;
+.list-group-item {
+  background-color: #2e2e2e;
+  border: none;
 }
-
