@@ -1,4 +1,4 @@
-const API_KEY = "6ca020962cd9479281521044250202";
+const API_KEY = "REACT_APP_WEATHER_API_KEY";
 const BASE_URL = "http://api.weatherapi.com/v1";
 
 const getForecastData = async (city, numDias = 3) => {
