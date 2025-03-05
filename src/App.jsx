@@ -2,7 +2,7 @@ import LiveWeather from "./components/Live-weather/live-weather.jsx";
 import getCurrentWeather from "./components/Services/get-weather.jsx";
 import { useEffect, useState } from "react";
 import getForecastData from "./components/Services/forecast-data.jsx";
-import "./app.scss";
+import "./App.scss";
 import WeatherPrevision from "./components/Weather-prevision/weather-prevision.jsx";
 
 function App() {
