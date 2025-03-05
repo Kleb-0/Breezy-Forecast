@@ -1,4 +1,39 @@
-.container{
-    width: 600px;
-    height: 600px;
+.forecast {
+  background-color: #4682B4;
+  overflow-y: auto;
+}
+
+.forecast-card {
+  max-width: 300px;
+  max-height: 400px;
+  flex: 1 1 calc(50% - 1rem);
+}
+
+.weather-day {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 300px;
+  max-height: 400px;
+  padding: 1rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.form-control {
+  width: 90%;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #4682B4;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #26282b; 
+  border-radius: 10px; 
 }

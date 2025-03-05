@@ -2,7 +2,6 @@ const API_KEY = "6ca020962cd9479281521044250202";
 const BASE_URL = "http://api.weatherapi.com/v1";
 
 const CurrentWeatherData = async (city) => {
-  console.log(city);
   try {
     const response = await fetch(
       `${BASE_URL}/current.json?key=${API_KEY}&q=${city}&lang=en`

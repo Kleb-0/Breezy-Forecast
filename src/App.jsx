@@ -6,31 +6,34 @@ import "./app.scss";
 import WeatherPrevision from "./components/Weather-prevision/weather-prevision.jsx";
 
 function App() {
+  const [city, setCity] = useState("new york");
+
   const [currentWeatherData, setCurrentWeatherData] = useState(null);
+  const [forecastData, setForecastData] = useState(null);
+
   useEffect(() => {
     const fetchCurrentWeatherData = async () => {
-      const data = await getCurrentWeather("Biguaçu");
+      const data = await getCurrentWeather(city); 
       setCurrentWeatherData(data);
     };
     fetchCurrentWeatherData();
-  }, []);
+  }, [city]);
 
-  const [forecastData, setForecastData] = useState(null);
   useEffect(() => {
     const fetchForecastData = async () => {
-      const data = await getForecastData("Biguaçu");
+      const data = await getForecastData(city); 
       console.log("Dados da previsão de tempo:", data);
       setForecastData(data);
     };
     fetchForecastData();
-  }, []);
+  }, [city]); 
 
   return (
-    <div className="d-flex justify-content-center align-items-center">
-      <LiveWeather currentWeatherData={currentWeatherData} />
-      <WeatherPrevision forecastData={forecastData} />
+    <div className="d-flex justify-content-center align-items-center app">
+      <LiveWeather currentWeatherData={currentWeatherData} setCity={setCity} />
+      <WeatherPrevision forecastData={forecastData} setCity={setCity} />
     </div>
   );
 }
 
-export default App;
+export default App
