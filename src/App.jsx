@@ -1,5 +1,5 @@
 import LiveWeather from "./components/Live-weather/live-weather.jsx";
-import getCurrentWeather from "./components/Services/get-weather.jsx";
+import CurrentWeatherData from "./components/Services/current-weather-data.jsx";
 import { useEffect, useState } from "react";
 import getForecastData from "./components/Services/forecast-data.jsx";
 import "./App.scss";
@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     const fetchCurrentWeatherData = async () => {
-      const data = await getCurrentWeather(city); 
+      const data = await CurrentWeatherData(city); 
       setCurrentWeatherData(data);
     };
     fetchCurrentWeatherData();

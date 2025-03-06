@@ -1,4 +1,4 @@
-const API_KEY = "REACT_APP_WEATHER_API_KEY";
+const API_KEY = import.meta.env.VITE_API_KEY;
 const BASE_URL = "http://api.weatherapi.com/v1";
 
 const CurrentWeatherData = async (city) => {
@@ -11,7 +11,7 @@ const CurrentWeatherData = async (city) => {
     }
     return await response.json();
   } catch (error) {
-    console.error("Erro ao buscar clima:", error);
+    console.error("Error to fetch weather:", error);
     return null;
   }
 };
