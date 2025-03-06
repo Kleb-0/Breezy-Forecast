@@ -15,6 +15,10 @@ BreezyForecast is a weather forecast application that provides accurate meteorol
 - **JavaScript (ES6+)**
 - **WeatherAPI**
 
+## Deploy Link
+
+This project was deployed on [Vercel] (https://breezy-forecast.vercel.app)
+
 ## How to Run the Project
 1. Clone this repository:
    ```bash
